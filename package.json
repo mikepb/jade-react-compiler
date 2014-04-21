@@ -18,6 +18,5 @@
   "scripts": {
     "test": "mocha --reporter spec"
   },
-  "license": "Apache 2.0",
-  "private": true
+  "license": "Apache 2.0"
 }
