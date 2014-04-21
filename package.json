@@ -1,11 +1,14 @@
 {
   "name": "jade-react-compiler",
-  "main": "index.js",
   "version": "0.0.1",
   "description": "Jade compiler for Facebook React",
   "authors": [
     "Michael Phan-Ba <michael@mikepb.com>"
   ],
+  "main": "index.js",
+  "bin": {
+    "jade-react-compiler": "./bin/jade-react-compiler.js"
+  },
   "dependencies": {
     "character-parser": "^1.2.0",
     "constantinople": "^2.0.0",

@@ -29,7 +29,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 var jade = require('jade');
 var ReactCompiler = require('./compiler');
 
-module.exports = function compile(str, options){
+module.exports = function (str, options){
   if (!options) options = {};
   str = str.toString('utf8')
 
