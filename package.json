@@ -1,6 +1,6 @@
 {
   "name": "jade-react-compiler",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Jade compiler for Facebook React",
   "authors": [
     "Michael Phan-Ba <michael@mikepb.com>"
