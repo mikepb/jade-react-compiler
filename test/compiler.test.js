@@ -33,7 +33,7 @@ var fs = require('fs');
 var compile = require('../index')
 
 function wrap () {
-  return '(function () {\n' + [].slice.call(arguments).join('\n') + '\n})';
+  return 'module.exports = function () {\n' + [].slice.call(arguments).join('\n') + '\n};';
 };
 
 describe('jade', function(){

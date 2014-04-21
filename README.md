@@ -4,12 +4,12 @@
 var compile = require('jade-react-compiler');
 var fn = compile('p foobar');
 
-// compiles to
-(function () {
+// compiles to (returns a string)
+module.exports = function () {
 return React.DOM.p(null,
   "foobar"
 )
-})
+};
 ```
 
 Use it in your favourite packaging tool.

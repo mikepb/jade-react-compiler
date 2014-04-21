@@ -41,5 +41,5 @@ module.exports = function compile(str, options){
   var compiler = new ReactCompiler(tokens, options);
   var js = compiler.compile();
 
-  return '(function () {\n' + js + '\n})';
+  return 'module.exports = function () {\n' + js + '\n};';
 };
