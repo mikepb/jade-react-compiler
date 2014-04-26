@@ -40,7 +40,7 @@ var fs = require('fs')
   , join = path.join
   , monocle = require('monocle')()
   , mkdirp = require('mkdirp')
-  , compile = require('../');
+  , compile = require('../').compile;
 
 // jade options
 

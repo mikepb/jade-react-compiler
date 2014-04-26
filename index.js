@@ -27,9 +27,11 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
 var jade = require('jade');
-var ReactCompiler = require('./compiler');
+var Transform = require('./lib/transform');
 
-module.exports = function (str, options){
+exports.filters = {};
+
+exports.compile = function (str, options){
   if (!options) options = {};
   str = str.toString('utf8')
 
@@ -38,8 +40,7 @@ module.exports = function (str, options){
   var tokens = parser.parse();
 
   // Compile
-  var compiler = new ReactCompiler(tokens, options);
-  var js = compiler.compile();
-
-  return 'module.exports = function () {\n' + js + '\n};';
+  var compiler = new Transform(tokens, options);
+  compiler.transform();
+  return compiler.compile();
 };
