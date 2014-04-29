@@ -27,7 +27,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
 var jade = require('jade');
-var Transform = require('./lib/generate');
+var Compiler = require('./lib/compiler');
 var React = require('react');
 
 exports.filters = {};
@@ -41,10 +41,6 @@ exports.compile = function (str, options){
   var tokens = parser.parse();
 
   // Compile
-  var compiler = new Transform(tokens, options);
-  var js = compiler.compile();
-  return js;
-  var Component = React.createClass({ render: eval(js) });
-  global.foo = function(){}
-  return React.renderComponentToStaticMarkup(new Component())
+  var compiler = new Compiler(tokens, options);
+  return compiler.compile();
 };

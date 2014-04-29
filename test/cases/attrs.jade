@@ -1,26 +1,32 @@
 a(href='/contact') contact
 a(href='/save').button save
-a(foo, bar, baz)
-a(foo='foo, bar, baz', bar=1)
-a(foo='((foo))', bar= (1) ? 1 : 0 )
-select
-  option(value='foo', selected) Foo
-  option(selected, value='bar') Bar
-a(foo="class:")
+a(data-foo, data-bar, baz)
+a(data-foo='foo, bar, baz', data-bar=1)
+a(data-foo='((foo))', data-bar= (1) ? 1 : 0 )
+select(value='foo')
+  option(value='foo') Foo
+  option(value='bar') Bar
+select(value='bar')
+  option(value='foo') Foo
+  option(value='bar') Bar
+a(data-foo="class:")
 input(pattern='\\S+')
 
 a(href='/contact') contact
 a(href='/save').button save
-a(foo bar baz)
-a(foo='foo, bar, baz' bar=1)
-a(foo='((foo))' bar= (1) ? 1 : 0 )
-select
-  option(value='foo' selected) Foo
-  option(selected value='bar') Bar
-a(foo="class:")
+a(data-foo data-bar data-baz)
+a(data-foo='foo, bar, baz' data-bar=1)
+a(data-foo='((foo))' data-bar= (1) ? 1 : 0 )
+select(value='foo')
+  option(value='foo') Foo
+  option(value='bar') Bar
+select(value='bar')
+  option(value='foo') Foo
+  option(value='bar') Bar
+a(data-foo="class:")
 input(pattern='\\S+')
 foo(terse="true")
 
-- var attrs = {foo: 'bar', bar: '<baz>'}
+- var attrs = {"data-foo": 'bar', "data-bar": '<baz>'}
 
 div&attributes(attrs)
