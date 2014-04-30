@@ -1,5 +1,7 @@
 # Jade React Compiler
 
+Use it in your favourite packaging tool.
+
 ```js
 var React = require('react');
 var jact = require('jade-react-compiler');
@@ -25,15 +27,11 @@ var markup = React.renderComponentToStaticMarkup(new Component());
 */
 ```
 
-Use it in your favourite packaging tool.
-
 ## Usage notes
 
-To use loops in the browser, lodash or underscore is required.
+Filters, mixins, cases and other things not yet implemented.
 
-A single root element is required. Code blocks must come before the root element.
-
-Filters, mixins, and other things not yet implemented.
+Inteded to be used as part of a compilation toolchain and not optimized for production use. Compile the files to JavaScript first, then `require()` them as usual.
 
 ## License
 
