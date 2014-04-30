@@ -7,7 +7,8 @@ var jact = require('jade-react-compiler');
 // Compile to code
 
 var js = jact.compileClient('p foobar');
-/*
+
+/* Output:
 module.exports = function () {
     return React.DOM.p(null, 'foobar');
 };
@@ -18,8 +19,8 @@ module.exports = function () {
 var fn = jact.compile('p foobar');
 var Component = React.createClass({ render: fn });
 var markup = React.renderComponentToStaticMarkup(new Component());
-console.log(markup)
-/*
+
+/* Output:
 <p>foobar</p>
 */
 ```
