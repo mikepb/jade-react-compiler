@@ -12,7 +12,7 @@ var js = jact.compileClient('p foobar');
 
 /* Output:
 module.exports = function () {
-    return React.DOM.p(null, 'foobar');
+  return React.DOM.p(null, 'foobar');
 };
 */
 

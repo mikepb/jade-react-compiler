@@ -32,7 +32,7 @@ var Compiler = require('./lib/compiler');
 exports.filters = {};
 
 exports.compile = function (str, options){
-  return eval(getCompiler(str, options).compile(str, options));
+  return eval(getCompiler(str, options).compile());
 };
 
 exports.compileClient = function (str, options){
