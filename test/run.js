@@ -5,10 +5,18 @@
 
 var fs = require('fs');
 var assert = require('assert');
-var jade = require('../');
+var jact = require('../');
 var uglify = require('uglify-js');
 
-jade.filters['custom-filter'] = function (str, options) {
+var beautify = require('js-beautify').html;
+// ensure beautify doesn't touch scripts
+require('js-beautify/js/lib/beautify').js_beautify = function (it) {
+  return it;
+};
+
+var React = global.React = require('react');
+
+jact.filters['custom-filter'] = function (str, options) {
   assert(str === 'foo bar');
   assert(options.foo === 'bar');
   return 'bar baz';
@@ -36,23 +44,18 @@ cases.forEach(function(test){
     var path = 'test/cases/' + test + '.jade';
     var str = fs.readFileSync(path, 'utf8');
     var html = fs.readFileSync('test/cases/' + test + '.html', 'utf8').trim().replace(/\r/g, '');
-    var fn = jade.compile(str, { filename: path, pretty: true, basedir: 'test/cases' });
-    var actual = fn({ title: 'Jade' });
+    var source = jact.compile(str, { filename: path, basedir: 'test/cases' });
+    var actual = React.renderComponentToStaticMarkup(new(eval(source))({ title: 'Jade' }));
+    actual = beautify(actual, { indent_size: 2 });
 
     fs.writeFileSync(__dirname + '/output/' + test + '.html', actual);
-    var clientCode = uglify.minify(jade.compileClient(str, {
+    var clientCode = uglify.minify(jact.compileClient(str, {
       filename: path,
       pretty: true,
       compileDebug: false,
       basedir: 'test/cases'
     }), {output: {beautify: true}, mangle: false, compress: false, fromString: true}).code;
-    var clientCodeDebug = uglify.minify(jade.compileClient(str, {
-      filename: path,
-      pretty: true,
-      compileDebug: true,
-      basedir: 'test/cases'
-    }), {output: {beautify: true}, mangle: false, compress: false, fromString: true}).code;
-    fs.writeFileSync(__dirname + '/output/' + test + '.js', uglify.minify(jade.compileClient(str, {
+    fs.writeFileSync(__dirname + '/output/' + test + '.js', uglify.minify(jact.compileClient(str, {
       filename: path,
       pretty: false,
       compileDebug: false,
@@ -67,17 +70,12 @@ cases.forEach(function(test){
       assert(/never-called/.test(str), 'never-called is in the jade file for mixins-unused');
       assert(!/never-called/.test(clientCode), 'never-called should be removed from the code');
     }
-    JSON.stringify(actual.trim()).should.equal(JSON.stringify(html));
-    actual = Function('jade', clientCode + '\nreturn template;')(jade.runtime)({ title: 'Jade' });
-    if (/filter/.test(test)) {
-      actual = actual.replace(/\n| /g, '');
-    }
-    JSON.stringify(actual.trim()).should.equal(JSON.stringify(html));
-    actual = Function('jade', clientCodeDebug + '\nreturn template;')(jade.runtime)({ title: 'Jade' });
-    if (/filter/.test(test)) {
-      actual = actual.replace(/\n| /g, '');
-    }
-    JSON.stringify(actual.trim()).should.equal(JSON.stringify(html));
+    assert.equal(actual.trim(), html);
+    // actual = Function('jade', clientCode + '\nreturn template;')(jact.runtime)({ title: 'Jade' });
+    // if (/filter/.test(test)) {
+    //   actual = actual.replace(/\n| /g, '');
+    // }
+    // assert.equal(JSON.stringify(actual.trim()), JSON.stringify(html));
   })
 });
 after(function () {

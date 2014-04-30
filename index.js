@@ -26,21 +26,28 @@ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-var jade = require('jade');
+var Parser = require('jade').Parser;
 var Compiler = require('./lib/compiler');
-var React = require('react');
 
 exports.filters = {};
 
 exports.compile = function (str, options){
+  return eval(getCompiler(str, options).compile(str, options));
+};
+
+exports.compileClient = function (str, options){
+  options.beautify = true;
+  return getCompiler(str, options).compile();
+};
+
+function getCompiler (str, options) {
   if (!options) options = {};
-  str = str.toString('utf8')
+  str = str.toString('utf8');
 
   // Parse
-  var parser = new (jade.Parser)(str, options.filename, options);
+  var parser = new Parser(str, options.filename, options);
   var tokens = parser.parse();
 
   // Compile
-  var compiler = new Compiler(tokens, options);
-  return compiler.compile();
-};
+  return new Compiler(tokens, options);
+}

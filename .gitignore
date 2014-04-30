@@ -4,3 +4,6 @@ npm-debug.log
 
 # Mac OS X
 .DS_Store
+
+# tests
+test/output/

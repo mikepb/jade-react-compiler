@@ -1,0 +1,3 @@
+module.exports = function () {
+    return React.DOM.div(true ? React.DOM.p(null, 'foo') : React.DOM.p(null, 'bar'), true ? React.DOM.p(null, 'foo') : React.DOM.p(null, 'bar'), true ? (React.DOM.p(null, 'foo'), React.DOM.p(null, 'bar'), React.DOM.p(null, 'baz')) : React.DOM.p(null, 'bar'), !true ? React.DOM.p(null, 'foo') : React.DOM.p(null, 'bar'), 'nested' ? 'works' ? React.DOM.p(null, 'yay') : null : null);
+};

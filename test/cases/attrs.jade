@@ -1,6 +1,6 @@
 a(href='/contact') contact
 a(href='/save').button save
-a(data-foo, data-bar, baz)
+a(data-foo, data-bar, data-baz)
 a(data-foo='foo, bar, baz', data-bar=1)
 a(data-foo='((foo))', data-bar= (1) ? 1 : 0 )
 select(value='foo')
@@ -25,7 +25,7 @@ select(value='bar')
   option(value='bar') Bar
 a(data-foo="class:")
 input(pattern='\\S+')
-foo(terse="true")
+p(data-terse="true")
 
 - var attrs = {"data-foo": 'bar', "data-bar": '<baz>'}
 

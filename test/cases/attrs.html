@@ -1,13 +1,30 @@
-<a href="/contact">contact</a><a href="/save" class="button">save</a><a foo="foo" bar="bar" baz="baz"></a><a foo="foo, bar, baz" bar="1"></a><a foo="((foo))" bar="1"></a>
-<select>
-  <option value="foo" selected="selected">Foo</option>
-  <option selected="selected" value="bar">Bar</option>
-</select><a foo="class:"></a>
-<input pattern="\S+"/><a href="/contact">contact</a><a href="/save" class="button">save</a><a foo="foo" bar="bar" baz="baz"></a><a foo="foo, bar, baz" bar="1"></a><a foo="((foo))" bar="1"></a>
-<select>
-  <option value="foo" selected="selected">Foo</option>
-  <option selected="selected" value="bar">Bar</option>
-</select><a foo="class:"></a>
-<input pattern="\S+"/>
-<foo terse="true"></foo>
-<div foo="bar" bar="<baz>"></div>
+<div><a href="&#x2f;contact">contact</a><a href="&#x2f;save" class="button">save</a>
+  <a data-foo="true" data-bar="true" data-baz="true"></a>
+  <a data-foo="&quot;foo, bar, baz&quot;" data-bar="1"></a>
+  <a data-foo="&quot;((foo))&quot;" data-bar="1"></a>
+  <select>
+    <option value="foo">Foo</option>
+    <option value="bar">Bar</option>
+  </select>
+  <select>
+    <option value="foo">Foo</option>
+    <option value="bar">Bar</option>
+  </select>
+  <a data-foo="&quot;class:&quot;"></a>
+  <input pattern="\S+"><a href="&#x2f;contact">contact</a><a href="&#x2f;save" class="button">save</a>
+  <a data-foo="true" data-bar="true" data-baz="true"></a>
+  <a data-foo="&quot;foo, bar, baz&quot;" data-bar="1"></a>
+  <a data-foo="&quot;((foo))&quot;" data-bar="1"></a>
+  <select>
+    <option value="foo">Foo</option>
+    <option value="bar">Bar</option>
+  </select>
+  <select>
+    <option value="foo">Foo</option>
+    <option value="bar">Bar</option>
+  </select>
+  <a data-foo="&quot;class:&quot;"></a>
+  <input pattern="\S+">
+  <p data-terse="&quot;true&quot;"></p>
+  <div data-foo="&quot;bar&quot;" data-bar="&quot;&lt;baz&gt;&quot;"></div>
+</div>
