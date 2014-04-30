@@ -3,10 +3,25 @@
 ```js
 var React = require('react');
 var jact = require('jade-react-compiler');
+
+// Compile to code
+
+var js = jact.compileClient('p foobar');
+/*
+module.exports = function () {
+    return React.DOM.p(null, 'foobar');
+};
+*/
+
+// Compile to function
+
 var fn = jact.compile('p foobar');
 var Component = React.createClass({ render: fn });
 var markup = React.renderComponentToStaticMarkup(new Component());
-// '<p>foobar</p>'
+console.log(markup)
+/*
+<p>foobar</p>
+*/
 ```
 
 Use it in your favourite packaging tool.

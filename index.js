@@ -36,6 +36,7 @@ exports.compile = function (str, options){
 };
 
 exports.compileClient = function (str, options){
+  if (!options) options = {};
   options.beautify = true;
   return getCompiler(str, options).compile();
 };

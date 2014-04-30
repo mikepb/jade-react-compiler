@@ -44,8 +44,9 @@ cases.forEach(function(test){
     var path = 'test/cases/' + test + '.jade';
     var str = fs.readFileSync(path, 'utf8');
     var html = fs.readFileSync('test/cases/' + test + '.html', 'utf8').trim().replace(/\r/g, '');
-    var source = jact.compile(str, { filename: path, basedir: 'test/cases' });
-    var actual = React.renderComponentToStaticMarkup(new(eval(source))({ title: 'Jade' }));
+    var fn = jact.compile(str, { filename: path, basedir: 'test/cases' });
+    var Component = React.createClass({ render: fn });
+    var actual = React.renderComponentToStaticMarkup(new Component({ title: 'Jade' }));
     actual = beautify(actual, { indent_size: 2 });
 
     fs.writeFileSync(__dirname + '/output/' + test + '.html', actual);
