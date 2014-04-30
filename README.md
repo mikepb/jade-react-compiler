@@ -1,15 +1,11 @@
 # Jade React Compiler
 
 ```js
-var compile = require('jade-react-compiler');
-var fn = compile('p foobar');
-
-// compiles to (returns a string)
-module.exports = function () {
-return React.DOM.p(null,
-  "foobar"
-)
-};
+var React = require('react');
+var jact = require('jade-react-compiler');
+var fn = jact.compile('p foobar');
+var Component = React.createClass({ render: fn });
+var markup = React.renderComponentToStaticMarkup(new Component());
 ```
 
 Use it in your favourite packaging tool.
