@@ -6,6 +6,7 @@ var jact = require('jade-react-compiler');
 var fn = jact.compile('p foobar');
 var Component = React.createClass({ render: fn });
 var markup = React.renderComponentToStaticMarkup(new Component());
+// '<p>foobar</p>'
 ```
 
 Use it in your favourite packaging tool.
