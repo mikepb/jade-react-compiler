@@ -54,6 +54,7 @@ program
   .option('-O, --obj <str>', 'javascript options object')
   .option('-o, --out <dir>', 'output the compiled html to <dir>')
   .option('-p, --path <path>', 'filename used to resolve includes')
+  .option('-P, --pretty', 'compile pretty html output')
   .option('-c, --client', 'compile function for client-side runtime.js')
   .option('-D, --no-debug', 'compile without debugging (smaller functions)')
   .option('-w, --watch', 'watch files for changes and automatically re-render')
@@ -101,6 +102,10 @@ options.compileDebug = program.debug;
 // --client
 
 options.client = program.client;
+
+// --pretty
+
+options.pretty = program.pretty;
 
 // --watch
 
