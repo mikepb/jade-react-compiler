@@ -40,7 +40,7 @@ var fs = require('fs')
   , join = path.join
   , monocle = require('monocle')()
   , mkdirp = require('mkdirp')
-  , compile = require('../').compile;
+  , jade = require('../');
 
 // jade options
 
@@ -54,6 +54,7 @@ program
   .option('-O, --obj <str>', 'javascript options object')
   .option('-o, --out <dir>', 'output the compiled html to <dir>')
   .option('-p, --path <path>', 'filename used to resolve includes')
+  .option('-c, --client', 'compile function for client-side runtime.js')
   .option('-D, --no-debug', 'compile without debugging (smaller functions)')
   .option('-w, --watch', 'watch files for changes and automatically re-render')
 
@@ -97,6 +98,10 @@ if (program.path) options.filename = program.path;
 
 options.compileDebug = program.debug;
 
+// --client
+
+options.client = program.client;
+
 // --watch
 
 options.watch = program.watch;
@@ -135,7 +140,14 @@ function stdin() {
   process.stdin.setEncoding('utf8');
   process.stdin.on('data', function(chunk){ buf += chunk; });
   process.stdin.on('end', function(){
-    process.stdout.write(compile(buf, options));
+    var output;
+    if (options.client) {
+      output = jade.compileClient(buf, options);
+    } else {
+      var fn = jade.compile(buf, options);
+      var output = fn(options);
+    }
+    process.stdout.write(output);
   }).resume();
 
   process.on('SIGINT', function() {
