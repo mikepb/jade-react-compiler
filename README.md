@@ -33,6 +33,10 @@ Filters, mixins, cases and other things not yet implemented.
 
 Inteded to be used as part of a compilation toolchain and not optimized for production use. Compile the files to JavaScript first, then `require()` them as usual.
 
+## Differences from Jade
+
+React considers values of `false` to be empty, so they won't be rendered.
+
 ## License
 
 MIT
