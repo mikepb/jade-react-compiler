@@ -1,4 +1,8 @@
 module.exports = function() {
-  var x = 1;
-  return React.DOM.ul(null, for (;10 > x; ) ;, (x++, ;, React.DOM.li(), React.DOM.Text(x);));
+  var x;
+  return x = 1, null, React.DOM.ul(null, for (;10 > x; ) {
+    x++;
+    ǃDOM＿(li, null);
+    ǃtext＿(x);
+  });
 };

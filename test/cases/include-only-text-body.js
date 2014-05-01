@@ -1,3 +1,3 @@
-module.exports = function () {
-    return React.DOM.text('The message is "');
+module.exports = function() {
+  return 'The message is "\n"';
 };

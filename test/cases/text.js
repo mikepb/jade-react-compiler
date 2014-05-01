@@ -1,3 +1,5 @@
-module.exports = function () {
-    return React.DOM.div(React.DOM.option({ 'value': '' }, '-- (selected) --'), React.DOM.p(null, 'foo' + 'bar' + 'baz'), React.DOM.p(null, 'foo' + 'bar' + 'baz'), React.DOM.pre(null, 'foo' + '  bar' + '    baz' + '.'), React.DOM.pre(null, 'foo' + '  bar' + '    baz' + '.'));
+module.exports = function() {
+  return React.DOM.div(null, React.DOM.option({
+    value: ""
+  }, "-- (selected) --"), React.DOM.p(null, "foo\nbar\nbaz"), React.DOM.p(null, "foo\nbar\nbaz"), React.DOM.pre(null, "foo\n  bar\n    baz\n."), React.DOM.pre(null, "foo\n  bar\n    baz\n."));
 };

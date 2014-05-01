@@ -1,3 +1,5 @@
-module.exports = function () {
-    return React.DOM.div(React.DOM.a({ className: '' }), React.DOM.a({ className: null }), React.DOM.a({ className: undefined }));
+module.exports = function() {
+  return React.DOM.div(null, React.DOM.a(), React.DOM.a(), React.DOM.a({
+    className: void 0
+  }));
 };

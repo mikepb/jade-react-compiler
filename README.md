@@ -29,6 +29,8 @@ var markup = React.renderComponentToStaticMarkup(new Component());
 
 ## Usage notes
 
+If there are more than one root nodes, only the last statement is returned. Same for block statements.
+
 Filters, mixins, cases and other things not yet implemented.
 
 Inteded to be used as part of a compilation toolchain and not optimized for production use. Compile the files to JavaScript first, then `require()` them as usual.

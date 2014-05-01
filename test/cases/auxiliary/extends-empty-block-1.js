@@ -1,3 +1,3 @@
-module.exports = function () {
-    return React.DOM.div(null, 'test1');
+module.exports = function() {
+  return React.DOM.div(null, "test1");
 };

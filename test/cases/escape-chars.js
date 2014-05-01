@@ -1,3 +1,3 @@
-module.exports = function () {
-    return React.DOM.script(null, 'var re = /\\d+/;');
+module.exports = function() {
+  return React.DOM.script(null, "var re = /\\d+/;");
 };

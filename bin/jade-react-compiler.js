@@ -177,7 +177,7 @@ function renderFile(path) {
       fs.readFile(path, 'utf8', function(err, str){
         if (err) throw err;
         options.filename = path;
-        var output = compile(str, options);
+        var output = jade.compileClient(str, options);
         var extname = '.js';
         path = path.replace(re, extname);
         if (program.out) path = join(program.out, basename(path));

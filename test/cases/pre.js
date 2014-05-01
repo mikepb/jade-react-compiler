@@ -1,3 +1,3 @@
-module.exports = function () {
-    return React.DOM.div(React.DOM.pre(null, 'foo' + 'bar' + 'baz'), React.DOM.pre(null, React.DOM.code(null, 'foo' + 'bar' + 'baz')));
+module.exports = function() {
+  return React.DOM.pre(null, "foo\nbar\nbaz"), React.DOM.pre(null, React.DOM.code(null, "foo\nbar\nbaz"));
 };

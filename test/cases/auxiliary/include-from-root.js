@@ -1,3 +1,3 @@
-module.exports = function () {
-    return React.DOM.h1(null, 'hello');
+module.exports = function() {
+  return React.DOM.h1(null, "hello");
 };

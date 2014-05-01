@@ -1,4 +1,8 @@
-module.exports = function () {
-    var id;
-    return React.DOM.div((id = 5, React.DOM.a({ 'href': '/user/' + id + '' })), foo({ 'bar': 'stuff #{here} yup' }));
+module.exports = function() {
+  var id = 5;
+  return React.DOM.div(null, (id = 5, null), React.DOM.a({
+    href: "/user/" + id
+  }), React.DOM.p({
+    "data-bar": '"stuff #{here} yup"'
+  }));
 };

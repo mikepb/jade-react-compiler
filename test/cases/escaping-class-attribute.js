@@ -1,3 +1,15 @@
-module.exports = function () {
-    return React.DOM.div(foo({ 'attr': '<%= bar %>' }), foo({ className: '<%= bar %>' }), foo({ 'attr': '<%= bar %>' }), foo({ className: '<%= bar %>' }), foo({ className: '<%= bar %> lol rofl' }), foo({ className: '<%= bar %> lol rofl <%= lmao %>' }));
+module.exports = function() {
+  return React.DOM.div(null, React.DOM.p({
+    attr: "<%= bar %>"
+  }), React.DOM.p({
+    className: "<%= bar %>"
+  }), React.DOM.p({
+    attr: "<%= bar %>"
+  }), React.DOM.p({
+    className: "<%= bar %>"
+  }), React.DOM.p({
+    className: "<%= bar %> lol rofl"
+  }), React.DOM.p({
+    className: "<%= bar %> lol rofl <%= lmao %>"
+  }));
 };

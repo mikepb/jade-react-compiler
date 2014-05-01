@@ -1,17 +1,18 @@
-- var id = 5
-- function answer() { return 42; }
-a(href='/user/' + id, class='button')
-a(href  =  '/user/' + id, class  =  'button')
-meta(data-key='answer', value=answer())
-a(class = ['class1', 'class2'])
-a.tag-class(class = ['class1', 'class2'])
+div
+  - var id = 5
+  - function answer() { return 42; }
+  a(href='/user/' + id, class='button')
+  a(href  =  '/user/' + id, class  =  'button')
+  meta(data-key='answer', value=answer())
+  a(class = ['class1', 'class2'])
+  a.tag-class(class = ['class1', 'class2'])
 
-a(href='/user/' + id class='button')
-a(href  =  '/user/' + id class  =  'button')
-meta(data-key='answer' value=answer())
-a(class = ['class1', 'class2'])
-a.tag-class(class = ['class1', 'class2'])
+  a(href='/user/' + id class='button')
+  a(href  =  '/user/' + id class  =  'button')
+  meta(data-key='answer' value=answer())
+  a(class = ['class1', 'class2'])
+  a.tag-class(class = ['class1', 'class2'])
 
-div(id=id)&attributes({'data-foo': 'bar'})
-- var bar = null
-div(data-foo=null data-bar=bar)&attributes({'data-baz': 'baz'})
+  div(id=id)&attributes({'data-foo': 'bar'})
+  - var bar = null
+  div(data-foo=null data-bar=bar)&attributes({'data-baz': 'baz'})

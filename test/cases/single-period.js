@@ -1,3 +1,3 @@
-module.exports = function () {
-    return React.DOM.span(null, '.');
+module.exports = function() {
+  return React.DOM.span(null, ".");
 };

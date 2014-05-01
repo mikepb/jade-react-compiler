@@ -1,32 +1,33 @@
-a(href='/contact') contact
-a(href='/save').button save
-a(data-foo, data-bar, data-baz)
-a(data-foo='foo, bar, baz', data-bar=1)
-a(data-foo='((foo))', data-bar= (1) ? 1 : 0 )
-select(value='foo')
-  option(value='foo') Foo
-  option(value='bar') Bar
-select(value='bar')
-  option(value='foo') Foo
-  option(value='bar') Bar
-a(data-foo="class:")
-input(pattern='\\S+')
+div
+  a(href='/contact') contact
+  a(href='/save').button save
+  a(data-foo, data-bar, data-baz)
+  a(data-foo='foo, bar, baz', data-bar=1)
+  a(data-foo='((foo))', data-bar= (1) ? 1 : 0 )
+  select(value='foo')
+    option(value='foo') Foo
+    option(value='bar') Bar
+  select(value='bar')
+    option(value='foo') Foo
+    option(value='bar') Bar
+  a(data-foo="class:")
+  input(pattern='\\S+')
 
-a(href='/contact') contact
-a(href='/save').button save
-a(data-foo data-bar data-baz)
-a(data-foo='foo, bar, baz' data-bar=1)
-a(data-foo='((foo))' data-bar= (1) ? 1 : 0 )
-select(value='foo')
-  option(value='foo') Foo
-  option(value='bar') Bar
-select(value='bar')
-  option(value='foo') Foo
-  option(value='bar') Bar
-a(data-foo="class:")
-input(pattern='\\S+')
-p(data-terse="true")
+  a(href='/contact') contact
+  a(href='/save').button save
+  a(data-foo data-bar data-baz)
+  a(data-foo='foo, bar, baz' data-bar=1)
+  a(data-foo='((foo))' data-bar= (1) ? 1 : 0 )
+  select(value='foo')
+    option(value='foo') Foo
+    option(value='bar') Bar
+  select(value='bar')
+    option(value='foo') Foo
+    option(value='bar') Bar
+  a(data-foo="class:")
+  input(pattern='\\S+')
+  p(data-terse="true")
 
-- var attrs = {"data-foo": 'bar', "data-bar": '<baz>'}
+  - var attrs = {"data-foo": 'bar', "data-bar": '<baz>'}
 
-div&attributes(attrs)
+  div&attributes(attrs)
