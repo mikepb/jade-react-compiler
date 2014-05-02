@@ -16,19 +16,19 @@ module.exports = function() {
   })), React.DOM.ul(null, ǃmap＿(items, function($item, $index) {
     ǃDOM＿(li, null);
     ǃtext＿($item);
-  })), (nums = [ 1, 2, 3 ], letters = [ "a", "b", "c" ], null), React.DOM.ul(null, ǃmap＿(letters, function(l, $index) {
+  })), (nums = [ 1, 2, 3 ], letters = [ "a", "b", "c" ], React.DOM.ul(null, ǃmap＿(letters, function(l, $index) {
     ǃmap＿(nums, function(n, $index) {
       ǃDOM＿(li, null);
       n;
       ǃtext＿(": ");
       l;
     });
-  })), (count = 1, counter = function() {
+  }))), (count = 1, counter = function() {
     return [ count++, count++, count++ ];
-  }, null), React.DOM.ul(null, ǃmap＿(counter(), function(n, $index) {
+  }, React.DOM.ul(null, ǃmap＿(counter(), function(n, $index) {
     ǃDOM＿(li, null);
     n;
-  })));
+  }))));
 };
 function ǃmap＿(obj, each, alt) {
   if (typeof obj.length === 'number') return [].map.call(obj, each);
