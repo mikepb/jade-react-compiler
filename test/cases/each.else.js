@@ -30,25 +30,33 @@ module.exports = function() {
     age: 10
   }, null), React.DOM.ul(null, ǃmap＿(user, function(val, key) {
     ǃDOM＿(li, null);
-    ǃtext＿("key: val");
+    key;
+    ǃtext＿(": ");
+    val;
   }, function() {
     ǃDOM＿(li, null);
     ǃtext＿("user has no details!");
   })), (user = {}, null), React.DOM.ul(null, ǃmap＿(user, function(prop, key) {
     ǃDOM＿(li, null);
-    ǃtext＿("key: val");
+    key;
+    ǃtext＿(": ");
+    val;
   }, function() {
     ǃDOM＿(li, null);
     ǃtext＿("user has no details!");
   })), React.DOM.ul(null, ǃmap＿(user, function(prop, key) {
     ǃDOM＿(li, null);
-    ǃtext＿("key: val");
+    key;
+    ǃtext＿(": ");
+    val;
   }, function() {
     ǃDOM＿(li, null);
     ǃtext＿("user has no details!");
   })), (user = Object.create(null), null), user.name = "tobi", React.DOM.ul(null, ǃmap＿(user, function(val, key) {
     ǃDOM＿(li, null);
-    ǃtext＿("key: val");
+    key;
+    ǃtext＿(": ");
+    val;
   }, function() {
     ǃDOM＿(li, null);
     ǃtext＿("user has no details!");

@@ -19,13 +19,15 @@ module.exports = function() {
   })), (nums = [ 1, 2, 3 ], null), (letters = [ "a", "b", "c" ], null), React.DOM.ul(null, ǃmap＿(letters, function(l, $index) {
     ǃmap＿(nums, function(n, $index) {
       ǃDOM＿(li, null);
-      ǃtext＿("n: l");
+      n;
+      ǃtext＿(": ");
+      l;
     });
   })), (count = 1, null), (counter = function() {
     return [ count++, count++, count++ ];
   }, null), React.DOM.ul(null, ǃmap＿(counter(), function(n, $index) {
     ǃDOM＿(li, null);
-    ǃtext＿("n");
+    n;
   })));
 };
 function ǃmap＿(obj, each, alt) {

@@ -40,7 +40,7 @@ fs.readdirSync('test/cases').reduce(function (files, file) {
   var path = 'test/cases/' + test + '.jade';
   var html = 'test/cases/' + test + '.html';
 
-  var _describe = /^(case|custom|escaping|while)\b|^html$/.test(test)
+  var _describe = /^(case|custom|escaping|mixins?|while)\b|^html$/.test(test)
     ? xdescribe : describe;
 
   _describe(test.replace(/[-.]/g, ' '), function () {
