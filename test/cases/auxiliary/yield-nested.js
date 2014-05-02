@@ -5,5 +5,5 @@ module.exports = function() {
     id: "content-wrapper"
   })), React.DOM.div({
     id: "footer"
-  }, stuff())));
+  }, React.DOM.span())));
 };

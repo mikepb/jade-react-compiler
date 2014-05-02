@@ -1,9 +1,10 @@
-script#user-template(type='text/template')
-  #user
-    h1 <%= user.name %>
-    p <%= user.description %>
+div
+  script#user-template(type='text/template')
+    #user
+      h1 <%= user.name %>
+      p <%= user.description %>
 
-script#user-template(type='text/template').
-  if (foo) {
-    bar();
-  }
+  script#user-template(type='text/template').
+    if (foo) {
+      bar();
+    }

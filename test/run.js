@@ -40,7 +40,7 @@ fs.readdirSync('test/cases').reduce(function (files, file) {
   var path = 'test/cases/' + test + '.jade';
   var html = 'test/cases/' + test + '.html';
 
-  var _describe = /^(case|custom|escaping|mixins?|while)\b|^html$/.test(test)
+  var _describe = /^(case|custom|escaping|filters|include filter|mixins?|tag.interpolation|while)\b|^html$/.test(test)
     ? xdescribe : describe;
 
   _describe(test.replace(/[-.]/g, ' '), function () {
@@ -114,5 +114,9 @@ after(function () {
 
 function render (fn, options) {
   var s = React.renderComponentToStaticMarkup(fn.call({ title: 'Jade' }));
-  return beautify(s, { indent_size: 2 });
+  return beautify(s, {
+    indent_scripts: 'keep',
+    indent_size: 2,
+    preserve_newlines: true
+  });
 }
