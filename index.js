@@ -1,5 +1,3 @@
-'use strict';
-
 /*
 (The MIT License)
 
@@ -29,15 +27,49 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 var Parser = require('jade').Parser;
 var Compiler = require('./lib/compiler');
 
+/**
+ * Jade React compiler version.
+ */
+
+exports.version = '0.2.0';
+
+/**
+ * Jade filters.
+ */
+
 exports.filters = {};
+
+/**
+ * Compile Jade to React view function.
+ *
+ * @param {String} str
+ * @param {Object} options
+ * @api public
+ */
 
 exports.compile = function (str, options){
   return eval(getCompiler(str, options).compile());
 };
 
+/**
+ * Compile Jade to React view module.
+ *
+ * @param {String} str
+ * @param {Object} options
+ * @api public
+ */
+
 exports.compileClient = function (str, options){
   return getCompiler(str, options).compile();
 };
+
+/**
+ * Get compiler for input `str`.
+ *
+ * @param {String} str
+ * @param {Object} options
+ * @api private
+ */
 
 function getCompiler (str, options) {
   if (!options) options = {};
