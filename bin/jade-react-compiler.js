@@ -42,6 +42,8 @@ var fs = require('fs')
   , mkdirp = require('mkdirp')
   , jade = require('../');
 
+global.React = require('react');
+
 // jade options
 
 var options = {};
@@ -150,7 +152,7 @@ function stdin() {
       output = jade.compileClient(buf, options);
     } else {
       var fn = jade.compile(buf, options);
-      var output = fn(options);
+      output = React.renderComponentToStaticMarkup(fn(options));
     }
     process.stdout.write(output);
   }).resume();
