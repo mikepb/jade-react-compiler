@@ -1,8 +1,5 @@
 module.exports = function() {
-  var attrs = {
-    "data-foo": "bar",
-    "data-bar": "<baz>"
-  };
+  var attrs;
   return React.DOM.div(null, React.DOM.a({
     href: "/contact"
   }, "contact"), React.DOM.a({

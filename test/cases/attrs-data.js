@@ -1,7 +1,5 @@
 module.exports = function() {
-  var user = {
-    name: "tobi"
-  };
+  var user;
   return React.DOM.div(null, (user = {
     name: "tobi"
   }, React.DOM.p({

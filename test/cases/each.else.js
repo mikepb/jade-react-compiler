@@ -1,65 +1,37 @@
 module.exports = function() {
-  var users = [], users = [ {
-    name: "tobi",
-    friends: [ "loki" ]
-  }, {
-    name: "loki"
-  } ], user = {
-    name: "tobi",
-    age: 10
-  }, user = {}, user = Object.create(null);
+  var users, user;
   return React.DOM.div(null, (users = [], React.DOM.ul(null, ǃmap＿(users, function(user, $index) {
-    ǃDOM＿(li, null);
-    ǃtext＿(user.name);
+    return React.DOM.li(null, user.name);
   }, function() {
-    ǃDOM＿(li, null);
-    ǃtext＿("no users!");
+    return React.DOM.li(null, "no users!");
   }))), (users = [ {
     name: "tobi",
     friends: [ "loki" ]
   }, {
     name: "loki"
   } ], users ? React.DOM.ul(null, ǃmap＿(users, function(user, $index) {
-    ǃDOM＿(li, null);
-    ǃtext＿(user.name);
+    return React.DOM.li(null, user.name);
   }, function() {
-    ǃDOM＿(li, null);
-    ǃtext＿("no users!");
+    return React.DOM.li(null, "no users!");
   })) : null), (user = {
     name: "tobi",
     age: 10
   }, React.DOM.ul(null, ǃmap＿(user, function(val, key) {
-    ǃDOM＿(li, null);
-    key;
-    ǃtext＿(": ");
-    val;
+    return React.DOM.li(null, key, ": ", val);
   }, function() {
-    ǃDOM＿(li, null);
-    ǃtext＿("user has no details!");
+    return React.DOM.li(null, "user has no details!");
   }))), (user = {}, React.DOM.ul(null, ǃmap＿(user, function(prop, key) {
-    ǃDOM＿(li, null);
-    key;
-    ǃtext＿(": ");
-    val;
+    return React.DOM.li(null, key, ": ", val);
   }, function() {
-    ǃDOM＿(li, null);
-    ǃtext＿("user has no details!");
+    return React.DOM.li(null, "user has no details!");
   }))), React.DOM.ul(null, ǃmap＿(user, function(prop, key) {
-    ǃDOM＿(li, null);
-    key;
-    ǃtext＿(": ");
-    val;
+    return React.DOM.li(null, key, ": ", val);
   }, function() {
-    ǃDOM＿(li, null);
-    ǃtext＿("user has no details!");
+    return React.DOM.li(null, "user has no details!");
   })), (user = Object.create(null), user.name = "tobi"), React.DOM.ul(null, ǃmap＿(user, function(val, key) {
-    ǃDOM＿(li, null);
-    key;
-    ǃtext＿(": ");
-    val;
+    return React.DOM.li(null, key, ": ", val);
   }, function() {
-    ǃDOM＿(li, null);
-    ǃtext＿("user has no details!");
+    return React.DOM.li(null, "user has no details!");
   })));
 };
 function ǃmap＿(obj, each, alt) {

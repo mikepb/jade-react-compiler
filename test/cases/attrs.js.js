@@ -1,8 +1,8 @@
 module.exports = function() {
   function answer() {
-    return 42;
+    return 42;;
   }
-  var id = 5, bar = null;
+  var id, bar;
   return React.DOM.div(null, (id = 5, React.DOM.a({
     href: "/user/" + id,
     className: "button"

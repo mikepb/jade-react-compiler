@@ -1,33 +1,23 @@
 module.exports = function() {
-  var items = [ 1, 2, 3 ], items = [ 1, 2, 3 ], nums = [ 1, 2, 3 ], letters = [ "a", "b", "c" ], count = 1, counter = function() {
-    return [ count++, count++, count++ ];
-  };
-  return React.DOM.div(null, (items = [ 1, 2, 3 ], React.DOM.ul(null, items.forEach(function(item) {
-    ǃDOM＿(li, null);
-    ǃtext＿(item);
+  var items, nums, letters, count, counter;
+  return React.DOM.div(null, (items = [ 1, 2, 3 ], React.DOM.ul(null, items.map(function(item) {
+    return React.DOM.li(null, item);
   }))), (items = [ 1, 2, 3 ], React.DOM.ul(null, ǃmap＿(items, function(item, i) {
-    ǃDOM＿(li, {
+    return React.DOM.li({
       className: "item-" + i
-    });
-    ǃtext＿(item);
+    }, item);
   }))), React.DOM.ul(null, ǃmap＿(items, function(item, i) {
-    ǃDOM＿(li, null);
-    ǃtext＿(item);
+    return React.DOM.li(null, item);
   })), React.DOM.ul(null, ǃmap＿(items, function($item, $index) {
-    ǃDOM＿(li, null);
-    ǃtext＿($item);
+    return React.DOM.li(null, $item);
   })), (nums = [ 1, 2, 3 ], letters = [ "a", "b", "c" ], React.DOM.ul(null, ǃmap＿(letters, function(l, $index) {
-    ǃmap＿(nums, function(n, $index) {
-      ǃDOM＿(li, null);
-      n;
-      ǃtext＿(": ");
-      l;
+    return ǃmap＿(nums, function(n, $index) {
+      return React.DOM.li(null, n, ": ", l);
     });
   }))), (count = 1, counter = function() {
-    return [ count++, count++, count++ ];
+    return [ count++, count++, count++ ];;
   }, React.DOM.ul(null, ǃmap＿(counter(), function(n, $index) {
-    ǃDOM＿(li, null);
-    n;
+    return React.DOM.li(null, n);
   }))));
 };
 function ǃmap＿(obj, each, alt) {

@@ -1,5 +1,5 @@
 module.exports = function() {
-  var id = 5;
+  var id;
   return React.DOM.div(null, (id = 5, React.DOM.a({
     href: "/user/" + id
   })), React.DOM.p({
