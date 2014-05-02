@@ -59,9 +59,24 @@ fs.readdirSync('test/cases').reduce(function (files, file) {
       }.bind(this));
     });
 
-    it('should compile', function () {
+    it('should render', function () {
       this.fn = jact.compile(this.source,
         { filename: path, basedir: 'test/cases' });
+
+      this.actual = render(this.fn);
+
+      if (/filter/.test(test)) {
+        this.actual = this.actual.replace(/\n| /g, '');
+        this.expect = this.expect.replace(/\n| /g, '');
+      }
+
+      if (/mixins-unused/.test(test)) {
+        mixinsUnusedTestRan = true;
+        assert(/never-called/.test(this.source),
+          'never-called is in the jade file for mixins-unused');
+      }
+
+      assert.equal(this.actual.trim(), this.expect);
     });
 
     it('should compile for client', function () {
@@ -70,39 +85,29 @@ fs.readdirSync('test/cases').reduce(function (files, file) {
         pretty: true,
         basedir: 'test/cases'
       });
-    });
-
-    it('should render', function () {
-      var actual = render(this.fn);
-
-      if (/filter/.test(test)) {
-        actual = actual.replace(/\n| /g, '');
-        this.expect = this.expect.replace(/\n| /g, '');
-      }
 
       if (/mixins-unused/.test(test)) {
         mixinsUnusedTestRan = true;
-        assert(/never-called/.test(this.source),
-          'never-called is in the jade file for mixins-unused');
         assert(!/never-called/.test(this.clientCode),
           'never-called should be removed from the code');
       }
 
-      assert.equal(actual.trim(), this.expect);
-    });
-
-    it('should render for client', function () {
-      var actual = render(eval(this.clientCode));
+      this.actual = render(eval(this.clientCode));
       if (/filter/.test(test)) {
-        actual = actual.replace(/\n| /g, '');
+        this.actual = this.actual.replace(/\n| /g, '');
       }
-      assert.equal(actual.trim(), this.expect);
+      assert.equal(this.actual.trim(), this.expect);
     });
 
     after(function (done) {
       fs.writeFile(__dirname + '/output/' + test + '.js',
         this.clientCode, done);
-    })
+    });
+
+    after(function (done) {
+      fs.writeFile(__dirname + '/output/' + test + '.html',
+        this.actual, done);
+    });
 
   });
 
