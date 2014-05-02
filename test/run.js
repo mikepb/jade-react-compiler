@@ -39,20 +39,25 @@ fs.readdirSync('test/cases').reduce(function (files, file) {
 }, []).forEach(function (test) {
   var path = 'test/cases/' + test + '.jade';
   var html = 'test/cases/' + test + '.html';
+  var name = test.replace(/[-.]/g, ' ');
 
   var _describe = /^(case|custom|escaping|filters|include filter|mixins?|tag.interpolation|while)\b|^html$/.test(test)
     ? xdescribe : describe;
 
-  _describe(test.replace(/[-.]/g, ' '), function () {
+  _describe(name, function () {
 
-    before(function (done) {
+    beforeEach(function () {
+      this.fn = this.clientCode = this.actual = this.expect = void 0;
+    });
+
+    beforeEach(function (done) {
       fs.readFile(path, 'utf8', function (err, str) {
         this.source = str;
         done(err);
       }.bind(this));
     });
 
-    before(function (done) {
+    beforeEach(function (done) {
       fs.readFile(html, 'utf8', function (err, str) {
         this.expect = str.trim().replace(/\r/g, '');
         done(err);
@@ -93,18 +98,21 @@ fs.readdirSync('test/cases').reduce(function (files, file) {
       }
 
       this.actual = render(eval(this.clientCode));
+
       if (/filter/.test(test)) {
         this.actual = this.actual.replace(/\n| /g, '');
+        this.expect = this.expect.replace(/\n| /g, '');
       }
+
       assert.equal(this.actual.trim(), this.expect);
     });
 
-    after(function (done) {
+    afterEach(function (done) {
       fs.writeFile(__dirname + '/output/' + test + '.js',
         this.clientCode, done);
     });
 
-    after(function (done) {
+    afterEach(function (done) {
       fs.writeFile(__dirname + '/output/' + test + '.html',
         this.actual, done);
     });
