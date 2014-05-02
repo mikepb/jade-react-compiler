@@ -70,7 +70,7 @@ module.exports = function() {
   }), (attrs = {
     "data-foo": "bar",
     "data-bar": "<baz>"
-  }, null), React.DOM.div(ǃattrs＿(attrs)));
+  }, React.DOM.div(ǃattrs＿(attrs))));
 };
 function ǃattrs＿() {
   var classes = [];

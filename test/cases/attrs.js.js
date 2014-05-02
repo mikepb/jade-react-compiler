@@ -3,10 +3,10 @@ module.exports = function() {
     return 42;
   }
   var id = 5, bar = null;
-  return React.DOM.div(null, (id = 5, null), React.DOM.a({
+  return React.DOM.div(null, (id = 5, React.DOM.a({
     href: "/user/" + id,
     className: "button"
-  }), React.DOM.a({
+  })), React.DOM.a({
     href: "/user/" + id,
     className: "button"
   }), React.DOM.meta({
@@ -33,11 +33,11 @@ module.exports = function() {
     id: id
   }, {
     "data-foo": "bar"
-  })), (bar = null, null), React.DOM.div(ǃattrs＿({
+  })), (bar = null, React.DOM.div(ǃattrs＿({
     "data-bar": bar
   }, {
     "data-baz": "baz"
-  })));
+  }))));
 };
 function ǃattrs＿() {
   var classes = [];
