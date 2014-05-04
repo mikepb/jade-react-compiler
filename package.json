@@ -5,6 +5,10 @@
   "authors": [
     "Michael Phan-Ba <michael@mikepb.com>"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mikepb/jade-react-compiler"
+  },
   "main": "index.js",
   "bin": {
     "jade-react-compiler": "./bin/jade-react-compiler.js"
