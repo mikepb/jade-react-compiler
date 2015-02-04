@@ -126,7 +126,7 @@ after(function () {
 });
 
 function render (fn, options) {
-  var s = React.renderComponentToStaticMarkup(fn.call({ title: 'Jade' }));
+  var s = React.renderToStaticMarkup(fn.call({ title: 'Jade' }));
   return beautify(s, {
     indent_scripts: 'keep',
     indent_size: 2,

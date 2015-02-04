@@ -31,7 +31,7 @@ var Compiler = require('./lib/compiler');
  * Jade React compiler version.
  */
 
-exports.version = '0.2.2';
+exports.version = '0.3.0';
 
 /**
  * Jade filters.

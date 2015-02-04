@@ -88,8 +88,10 @@ module.exports = function() {
 
 ## Differences from Jade
 
-React considers values of `false` to be empty, so they won't be
-rendered.
+React considers values of `false` to be empty, so they won't be rendered.
+
+If you render a naked text node without a parent node, it will be wrapped in
+a `<span>`.
 
 
 ## Implementation details

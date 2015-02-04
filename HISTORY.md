@@ -1,3 +1,10 @@
+0.3.0 / 2015-02-03
+==================
+
+  * Update dependencies
+  * Better support for class names
+
+
 0.2.2 / 2014-05-04
 ==================
 
